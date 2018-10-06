@@ -31,7 +31,7 @@ service UserService {
   }
   rpc UpdatePassword (UpdatePasswordRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
-      patch: "/users/{user.user_id}/password"
+      patch: "/users/{user_id}/password"
     };
   }
 }
@@ -69,7 +69,8 @@ message UpdateUserRequest {
 }
 
 message UpdatePasswordRequest {
-  string password = 1;
-  string new_password = 2;
-  string new_password_repeat = 3;
+  string user_id = 1;
+  string password = 2;
+  string new_password = 3;
+  string new_password_repeat = 4;
 }
